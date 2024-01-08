@@ -1,5 +1,8 @@
 const express = require('express');
 const app = express();
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 const PORT = 3000;
 
 const json = {
@@ -27,6 +30,7 @@ const json = {
     ]
 };
 
+//testing a 2nd json, it failed
 /*const hope = {
     Project: "Photography",
     typeOfPhotos: [
@@ -37,9 +41,10 @@ const json = {
 */
 
 app.get('/', (req, res) => {
-    res.send("Nervous");
-})
+    res.send("Welcome!");
+});
 
+//testing a 2nd json, it failed
 /*app.get('/', (req, res) => {
     res.send({"data1": hope});
 })
@@ -49,6 +54,11 @@ app.get('/', (req, res) => {
 app.get('/', (req, res) => {
     res.send({"data": json});
 })
+
+app.post('/api/customers', (req, res) => {
+    console.log(req.body);
+    res.send(req.body);
+});
 
 app.post('/', (req, res) => {
     res.send('This is a post request!');
