@@ -27,6 +27,25 @@ const json = {
     ]
 };
 
+/*const hope = {
+    Project: "Photography",
+    typeOfPhotos: [
+        "Tinder",
+        "Wedding"
+    ]
+};
+*/
+
+app.get('/', (req, res) => {
+    res.send("Nervous");
+})
+
+/*app.get('/', (req, res) => {
+    res.send({"data1": hope});
+})
+*/
+
+
 app.get('/', (req, res) => {
     res.send({"data": json});
 })
